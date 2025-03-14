@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Arrastrar y Soltar</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Conectamos el CSS para el diseño -->
+</head>
+<body>
+
+    <h2>Completa la oración:</h2>
+    
+    <p>
+        La <span class="dropzone" data-palabra-correcta="casa"></span> es grande y tiene un <span class="dropzone" data-palabra-correcta="coche"></span>.
+    </p>
+
+    <h3>Palabras:</h3>
+    <div id="words">
+        <!-- Estas son las palabras que el jugador puede arrastrar -->
+        <div class="word" id="casa" draggable="true">casa</div>
+        <div class="word" id="perro" draggable="true">perro</div>
+        <div class="word" id="jardín" draggable="true">jardín</div>
+        <div class="word" id="coche" draggable="true">coche</div>
+    </div>
+
+    <script src="script.js"></script> <!-- Conectamos el archivo JavaScript -->
+</body>
+</html>

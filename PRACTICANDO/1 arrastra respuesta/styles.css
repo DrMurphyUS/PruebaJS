@@ -1,0 +1,36 @@
+/* Usamos una fuente simple para que sea fácil de leer */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Diseño de las palabras que se pueden arrastrar */
+.word {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: lightblue; /* Fondo azulito */
+    cursor: grab; /* Aparece una manito cuando pasas el mouse */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Diseño de los espacios vacíos donde deben colocarse las palabras */
+.dropzone {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    border: 2px dashed gray; /* Bordes de línea discontinua para mostrar que ahí va algo */
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+/* Si la palabra colocada es correcta, se pondrá verde */
+.correct {
+    background-color: lightgreen;
+}
+
+/* Si la palabra colocada es incorrecta, se pondrá roja por 1 segundo */
+.incorrect {
+    background-color: red;
+}

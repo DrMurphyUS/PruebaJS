@@ -1,0 +1,38 @@
+/* Establecemos una fuente básica y centramos todo el contenido */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Diseño de los botones de respuesta */
+.option {
+    display: block; /* Hace que los botones se muestren uno debajo del otro */
+    padding: 10px;
+    margin: 5px auto;
+    width: 200px;
+    background-color: lightblue;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Efecto cuando pasamos el mouse sobre las opciones */
+.option:hover {
+    background-color: deepskyblue;
+}
+
+/* Mensaje de respuesta correcta */
+.correct {
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Mensaje de respuesta incorrecta */
+.incorrect {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
