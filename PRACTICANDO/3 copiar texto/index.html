@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Copiar texto con botón</title>
+  <style>
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button.copiado {
+      background-color: #2ecc71; /* Verde cuando se copia */
+    }
+  </style>
+</head>
+<body>
+
+  <p id="miParrafo">Eres un puto</p>
+  <button id="copiarBtn" onclick="copiarTexto()">Copiar texto</button>
+
+  <script>
+    function copiarTexto() {
+      const texto = document.getElementById("miParrafo").innerText;
+      const boton = document.getElementById("copiarBtn");
+
+      navigator.clipboard.writeText(texto).then(() => {
+        boton.classList.add("copiado");
+        boton.textContent = "¡Copiado!";
+
+        // Volvemos al estado original después de 2 segundos
+        setTimeout(() => {
+          boton.classList.remove("copiado");
+          boton.textContent = "Copiar texto";
+        }, 2000);
+      }).catch(err => {
+        console.error("Error al copiar: ", err);
+      });
+    }
+  </script>
+
+</body>
+</html>
