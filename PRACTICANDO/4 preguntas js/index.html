@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuestionario</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 30px; }
+    .pregunta { margin-bottom: 20px; }
+    .opcion { display: block; margin: 8px; }
+    .resultado { font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>Cuestionario</h1>
+  <div id="quiz">
+    <div class="pregunta" id="preguntaTexto"></div>
+    <div id="opciones"></div>
+    <button onclick="siguientePregunta()">Siguiente</button>
+    <div class="resultado" id="resultado"></div>
+  </div>
+
+  <script>
+    const preguntas = [
+      {
+        texto: "¿El sol es una estrella?",
+        opciones: ["Sí", "No"],
+        correcta: 0
+      },
+      {
+        texto: "¿2 + 2 = 5?",
+        opciones: ["Verdadero", "Falso"],
+        correcta: 1
+      },
+      // Agrega hasta 20 preguntas aquí...
+      {
+        texto: "Es trapatripa el mejor dibujito",
+        opciones: ["Verdadero", "Falso","Alucina"],
+        correcta: 2
+      },
+    ];
+
+    let preguntaActual = 0;
+    let puntaje = 0;
+
+    function mostrarPregunta() {
+      const p = preguntas[preguntaActual];
+      document.getElementById("preguntaTexto").textContent = p.texto;
+
+      const opcionesDiv = document.getElementById("opciones");
+      opcionesDiv.innerHTML = "";
+
+      p.opciones.forEach((op, i) => {
+        const btn = document.createElement("button");
+        btn.textContent = op;
+        btn.className = "opcion";
+        btn.onclick = () => verificarRespuesta(i);
+        opcionesDiv.appendChild(btn);
+      });
+
+      document.getElementById("resultado").textContent = "";
+    }
+
+    function verificarRespuesta(iSeleccionado) {
+      const p = preguntas[preguntaActual];
+      if (iSeleccionado === p.correcta) {
+        puntaje++;
+        document.getElementById("resultado").textContent = "✅ Correcto";
+      } else {
+        document.getElementById("resultado").textContent = "❌ Incorrecto";
+      }
+    }
+
+    function siguientePregunta() {
+      if (preguntaActual < preguntas.length - 1) {
+        preguntaActual++;
+        mostrarPregunta();
+      } else {
+        document.getElementById("quiz").innerHTML =
+          `<h2>Tu puntaje final: ${puntaje} de ${preguntas.length}</h2>`;
+      }
+    }
+
+    // Mostrar la primera pregunta al inicio
+    mostrarPregunta();
+  </script>
+</body>
+</html>
