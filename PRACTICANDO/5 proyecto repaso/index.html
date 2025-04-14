@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Juego de Oraciones</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Juego de Oraciones Incompletas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="inicio">
@@ -14,7 +14,11 @@
   <div id="juego" style="display:none;">
     <h2 id="tituloJuego"></h2>
     <div id="preguntasContainer"></div>
-    <button id="siguienteBtn">Siguiente Juego</button>
+    <div class="botones">
+      <button id="siguienteBtn">⏭️ Siguiente Juego</button>
+      <button id="reiniciarBtn">🔁 Reiniciar Juego</button>
+      <button id="volverInicioBtn">🔙 Volver al Inicio</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
