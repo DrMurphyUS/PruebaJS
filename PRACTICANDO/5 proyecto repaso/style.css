@@ -1,17 +1,4 @@
 body {
-    font-family: sans-serif;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  input {
-    padding: 5px;
-    margin: 5px;
-  }
-  
-  .correcto { color: green; }
-  .incorrecto { color: red; }
-  body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;

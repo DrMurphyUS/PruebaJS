@@ -13,7 +13,7 @@ const juegos = [
       { oracion: "La nieve es ___", respuesta: "blanca" }
     ]
   }
-  // Puedes seguir agregando hasta tener tus 28 juegos
+  // Agrega tus demás juegos aquí...
 ];
 
 let juegoActual = 0;
@@ -25,12 +25,21 @@ document.getElementById("iniciarBtn").addEventListener("click", () => {
 });
 
 document.getElementById("siguienteBtn").addEventListener("click", () => {
-  juegoActual++;
-  if (juegoActual < juegos.length) {
+  if (juegoActual < juegos.length - 1) {
+    juegoActual++;
     cargarJuego();
   } else {
     alert("¡Terminaste todos los juegos!");
     location.reload();
+  }
+});
+
+document.getElementById("anteriorBtn").addEventListener("click", () => {
+  if (juegoActual > 0) {
+    juegoActual--;
+    cargarJuego();
+  } else {
+    alert("Estás en el primer juego.");
   }
 });
 
